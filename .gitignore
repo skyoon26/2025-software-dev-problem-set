@@ -1,0 +1,10 @@
+# IntelliJ IDEA specific files
+.idea/
+
+# IntelliJ project/module files
+*.iml
+
+# Workspace and IDE config files
+.idea/workspace.xml
+.idea/misc.xml
+.idea/modules.xml
