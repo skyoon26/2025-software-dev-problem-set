@@ -11,14 +11,32 @@
 // }
 
 // Solution 2:
-const isAnagram = (s, t) => {
+// const isAnagram = (s, t) => {
 
-  if (s.length !== t.length) {
-    return false;
-  } else {
-    return s.split('').sort().join('') === t.split('').sort().join('');
-  }
+//   if (s.length !== t.length) {
+//     return false;
+//   } else {
+//     return s.split('').sort().join('') === t.split('').sort().join('');
+//   }
   
+// }
+
+// Solution 3:
+const isAnagram = (s, t) => {
+  if (s.length !== t.length) return false;
+
+  const count = new Map();
+
+  for (let char of s) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  for (let char of t) {
+    if (!count[char]) return false;
+    count[char]--;
+  }
+
+  return true;
 }
 
 let s = "anagram";
